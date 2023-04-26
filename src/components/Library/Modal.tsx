@@ -49,7 +49,7 @@ import React, {
               transition={{duration: 0.2, ease: "easeInOut"}}
               className={twMerge(
                 classNames(
-                  "fixed inset-0 flex justify-center items-center transition-colors before:scale-150",
+                  "fixed inset-0 backdrop-blur-md flex justify-center items-center transition-colors before:scale-150",
                   "before:fixed before:inset-0 before:bg-slate-500 before:opacity-20",
                 ),
                 className,

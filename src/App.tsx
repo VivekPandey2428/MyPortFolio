@@ -22,7 +22,21 @@ function App() {
     <div className="h-screen flex justify-center items-center overflow-hidden">
       <div className="relative h-full w-full drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] z-0">
         <div className="absolute w-full h-full bg-black opacity-60 z-[-1]"></div>
-        <video className="absolute z-[-2] w-full h-full object-cover right-0 bottom-0" src={Vivek} autoPlay loop muted/>
+        <div
+              dangerouslySetInnerHTML={{
+                __html: `
+                <video
+                  loop
+                  muted={true}
+                  autoPlay
+                  playsInline={true}
+                  id="video"
+                  class="absolute z-[-2] w-full h-full object-cover right-0 bottom-0"
+                >
+                <source autoPlay muted={true} src="${Vivek}" type="video/mp4" />
+                </video>`,
+              }}
+            />
         <Navbar onValueChange={onValueChange}/>
         <Home />
         {openModal === "About" && <AboutMe isActive={true} onCloseHandler={onCloseHandler}/>}

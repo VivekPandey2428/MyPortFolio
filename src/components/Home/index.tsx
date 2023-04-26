@@ -6,10 +6,10 @@ const Home = () => {
       <div className="w-full flex flex-col justify-center items-center relative">
         <div className="w-full md:w-1/2">
           <div className="h-1/4 w-full pt-10  flex gap-4 items-center">
-            <Paper className="opacity-30 h-10 w-40 text-white text-lg rotate-0 bg-sky-400">
+            <Paper className="opacity-30 h-10 w-40 text-lg rotate-0 bg-sky-400">
               Hello There!
             </Paper>
-            <div className="text-white text-7xl font-serif">I am</div>
+            <div className="text-white text-7xl font-serif font-link">I am</div>
           </div>
           <div className="pt-10 w-full">
             <div className="flex">
@@ -25,7 +25,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="w-full md:w-3/4 m-2 p-5 pt-10 md:text-2xl text-lg text-gray-400 tracking-wide font-thin">
+        <div className="w-full md:w-3/4 m-2 p-5 pt-10 md:text-2xl text-lg text-white opacity-80 tracking-wide font-mono">
         A Frontend Developer who has Engineered Modern Websites using technologies like JS, React, Angular and Typescript with a touch of HTML and CSS as well.
         </div>
       </div>

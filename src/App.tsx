@@ -1,50 +1,55 @@
-import React, { useState } from "react";
-import Navbar from "./components/Navbar";
-import Vivek from "./assets/vivek.mp4";
 import Home from "./components/Home";
-import AboutMe from "./components/AboutMe";
-import Experience from "./components/Experience";
 import Skills from "./components/Skills";
-import Projects from "./components/Projects";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import Info from "./components/Info";
+import Project from "./components/Project";
+import Card from "./components/Card";
+import ContactMe from "./components/ContactMe";
 
 function App() {
-  const [openModal, setOpenModal] = useState("");
-  const onValueChange = (val: string) => {
-    if (val === "Resume") {
-     return window.location.href = "https://white-marcy-83.tiiny.site/";
-    }
-    setOpenModal(val);
-  }
-  const onCloseHandler = () => {
-    setOpenModal("");
-}
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
-    <div className="h-screen flex justify-center items-center overflow-hidden">
-      <div className="relative h-full w-full drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] z-0">
-        <div className="absolute w-full h-full bg-black opacity-60 z-[-1]"></div>
-        <div
-              dangerouslySetInnerHTML={{
-                __html: `
-                <video
-                  loop
-                  muted={true}
-                  autoPlay
-                  playsInline={true}
-                  id="video"
-                  class="absolute z-[-2] w-full h-full object-cover right-0 bottom-0"
-                >
-                <source autoPlay muted={true} src="${Vivek}" type="video/mp4" />
-                </video>`,
-              }}
-            />
-        <Navbar onValueChange={onValueChange}/>
-        <Home />
-        {openModal === "About" && <AboutMe isActive={true} onCloseHandler={onCloseHandler}/>}
-        {openModal === "Experience" && <Experience isActive={true} onCloseHandler={onCloseHandler}/>}
-        {openModal === "Skills" && <Skills isActive={true} onCloseHandler={onCloseHandler}/>}
-        {openModal === "Projects" && <Projects isActive={true} onCloseHandler={onCloseHandler}/>}
-      </div>
-    </div>
+    <AnimatePresence>
+      {loading && (
+        <motion.div
+          initial={{ y: "-100px",x: " -50%", opacity: 0 }}
+          animate={{
+            y: 0,
+            opacity: 1,
+            transition: {
+              type: "spring",
+              bounce: 0.4,
+              duration: 0.8,
+            },
+          }}
+          className="container-text"
+        >
+          <h1 className="text">नमस्ते - Hello!</h1>
+        </motion.div>
+      )}
+      {!loading && (
+        <div className="home font-grotesk">
+          <div className="wrapper px-10">
+            <Home />
+            <Info />
+            <Project />
+            <Skills />
+            <Card />
+            <ContactMe />
+          </div>
+        </div>
+      )}
+    </AnimatePresence>
   );
 }
 

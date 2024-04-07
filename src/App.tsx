@@ -19,8 +19,8 @@ function App() {
   }, []);
 
   return (
-    <AnimatePresence>
-      {loading && (
+    <>
+      {/* {loading && (
         <motion.div
           initial={{ y: "-100px",x: " -50%", opacity: 0 }}
           animate={{
@@ -36,8 +36,8 @@ function App() {
         >
           <h1 className="text">नमस्ते - Hello!</h1>
         </motion.div>
-      )}
-      {!loading && (
+      )} */}
+      {/* {!loading && ( */}
         <div className="home font-grotesk">
           <div className="wrapper px:0 md:px-10">
             <Home />
@@ -48,8 +48,8 @@ function App() {
             <ContactMe />
           </div>
         </div>
-      )}
-    </AnimatePresence>
+      {/* )} */}
+    </>
   );
 }
 

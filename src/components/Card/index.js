@@ -40,7 +40,6 @@ const Card = () => {
       <div
         className="card-section py-10"
         ref={scrollRef}
-        style={{ overflow: "scroll" }}
       >
         {WorkExperience.map((data, idx) => {
           return (

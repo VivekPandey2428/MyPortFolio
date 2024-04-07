@@ -39,7 +39,7 @@ function App() {
       )}
       {!loading && (
         <div className="home font-grotesk">
-          <div className="wrapper px-10">
+          <div className="wrapper px:0 md:px-10">
             <Home />
             <Info />
             <Project />

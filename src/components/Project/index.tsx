@@ -46,8 +46,8 @@ const ProjectCard = ({
       onMouseMove={handleMouseMove}
       {...restProps}
     >
-      <h4 className="text-4xl hover:-translate-x-8">{name}</h4>
-      <p className="text-lg opacity-60 italic">{description}</p>
+      <h4 className="text-xl md:text-4xl hover:-translate-x-8">{name}</h4>
+      <p className="text-sm opacity-60 italic">{description}</p>
     </div>
   );
 };
@@ -61,7 +61,7 @@ export default function Project() {
   };
   return (
     <>
-      <div className="h-screen font-grotesk flex items-center justify-center w-full">
+      <div className="pt-32 pb-20 px-14 font-grotesk flex items-center justify-center w-full">
         <motion.div
           onMouseLeave={() => setOpen(false)}
           className="project-section w-full flex flex-col items-center justify-center"

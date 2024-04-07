@@ -20,14 +20,13 @@ const Skills = () => {
   return (
     <div className="pt-10">
       <div className="skill-grid">
-        <div className="desc-skill-grid h-3/4 md:flex-col">
-          <AnimatePresence>
+        <div className="desc-skill-grid px-10 h-100 lg:h-3/4 md:flex-col">
+          <AnimatePresence >
             {skillsDetails.map((data, idx) => {
               return (
                 <motion.div
-                  initial={{ x: "-100px", opacity: 0 }}
+                  initial={{ opacity: 0 }}
                   whileInView={{
-                    x: 0,
                     opacity: 1,
                     transition: {
                       type: "spring",

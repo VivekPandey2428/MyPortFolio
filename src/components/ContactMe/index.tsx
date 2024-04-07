@@ -9,7 +9,7 @@ const ContactMe = () => {
   const [emailValue, setEmailValue] = useState("");
   const [messageValue, setMessageValue] = useState("");
   return (
-    <div className="py-10">
+    <div className="py-10 px-14 md:px-5">
       <div className=" pb-5 text-white text-4xl">Contact Me</div>
       <div className="text-white text-opacity-60">
         Fill in the form or reach out to me at{" "}

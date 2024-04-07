@@ -29,7 +29,7 @@ const Home = () => {
           <li>Contact</li>
         </ul>
       </motion.div>
-      <motion.div className="h-[110vh] w-full text-white">
+      <motion.div className="w-full pt-60 pb-72 text-white">
         <div className="h-full home-grid-layout">
           <motion.div
             initial={{ x: "100px", opacity: 0 }}
@@ -44,11 +44,11 @@ const Home = () => {
               },
             }}
             viewport={{ once: true, amount: 0.8 }}
-            className="grid-top-right mt-auto mr-auto text-lg"
+            className="grid-top-right mt-auto mx-auto md:mr-auto mb-10 text-lg"
           >
             SOFTWARE DEVELOPER & FREELANCER
           </motion.div>
-          <div className="flex flex-col items-center justify-center grid-center">
+          <div className="grid-center">
             <motion.span
               initial={{ x: "100px", opacity: 0, rotate: -10 }}
               transformTemplate={template}
@@ -65,7 +65,7 @@ const Home = () => {
                 },
               }}
               viewport={{ once: true, amount: 0.8 }}
-              className="material-icons-outlined -rotate-45 ml-auto animate-top-bottom"
+              className="material-icons-outlined -rotate-45 mx-auto md:ml-auto mb-auto animate-top-bottom"
             >
               east
             </motion.span>
@@ -82,26 +82,9 @@ const Home = () => {
                 },
               }}
               viewport={{ once: true, amount: 0.8 }}
-              className="text-5xl font-semibold italic"
+              className="text-7xl font-semibold italic mx-auto md:ml-auto"
             >
-              Hi!
-            </motion.div>
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  type: "spring",
-                  bounce: 0.4,
-                  duration: 0.8,
-                  delay: 1,
-                },
-              }}
-              viewport={{ once: true, amount: 0.8 }}
-              className="text-7xl font-semibold italic"
-            >
-              i am Vivek Pandey
+              Vivek Pandey
             </motion.div>
           </div>
         </div>

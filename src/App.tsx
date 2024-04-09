@@ -1,7 +1,7 @@
 import Home from "./components/Home";
 import Skills from "./components/Skills";
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import {  motion } from "framer-motion";
 import Info from "./components/Info";
 import Project from "./components/Project";
 import Card from "./components/Card";
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      {/* {loading && (
+      {loading && (
         <motion.div
           initial={{ y: "-100px",x: " -50%", opacity: 0 }}
           animate={{
@@ -36,9 +36,8 @@ function App() {
         >
           <h1 className="text">नमस्ते - Hello!</h1>
         </motion.div>
-      )} */}
-      {/* {!loading && ( */}
-        <div className="home font-grotesk">
+      )}
+        {!loading && <div className="home font-grotesk">
           <div className="wrapper px:0 md:px-10">
             <Home />
             <Info />
@@ -47,8 +46,7 @@ function App() {
             <Card />
             <ContactMe />
           </div>
-        </div>
-      {/* )} */}
+        </div>}
     </>
   );
 }

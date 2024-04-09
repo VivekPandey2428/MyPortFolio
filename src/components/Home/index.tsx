@@ -5,6 +5,13 @@ const Home = () => {
     return `rotate(${rotate}) translateX(${x})`;
   }
 
+  const getScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "center", inline: "center"});
+    }
+  }
+
   return (
     <>
       <motion.div
@@ -23,10 +30,11 @@ const Home = () => {
         className="nav"
       >
         <ul className="nav-section">
-          <li>Experience</li>
-          <li>Skills</li>
-          <li>Projects</li>
-          <li>Contact</li>
+          <li onClick={() => getScroll("about-me")}>About</li>
+          <li onClick={() => getScroll("my-projects")}>Projects</li>
+          <li onClick={() => getScroll("my-skills")}>Skills</li>
+          <li onClick={() => getScroll("my-experience")}>Experience</li>
+          <li onClick={() => getScroll("my-contact")}>Contact</li>
         </ul>
       </motion.div>
       <motion.div className="w-full pt-60 pb-72 text-white">
@@ -65,7 +73,7 @@ const Home = () => {
                 },
               }}
               viewport={{ once: true, amount: 0.8 }}
-              className="material-icons-outlined -rotate-45 mx-auto md:ml-auto mb-auto animate-top-bottom"
+              className="material-icons-outlined -rotate-45 mx-auto md:ml-auto md:mr-0 mb-auto animate-top-bottom"
             >
               east
             </motion.span>
@@ -82,7 +90,7 @@ const Home = () => {
                 },
               }}
               viewport={{ once: true, amount: 0.8 }}
-              className="text-7xl font-semibold italic mx-auto md:ml-auto"
+              className="text-7xl font-semibold italic mx-auto md:ml-auto md:mr-0"
             >
               Vivek Pandey
             </motion.div>

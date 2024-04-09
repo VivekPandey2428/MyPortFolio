@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body { height: 100%;   width: 100%; min-width: max-content; margin: 0; padding: 0; }
+html, body { height: 100%;   width: 100%;  margin: 0; padding: 0; }
 
 .font-link {
   font-family: 'Hanalei Fill', cursive;
@@ -59,7 +59,6 @@ html, body { height: 100%;   width: 100%; min-width: max-content; margin: 0; pad
 
 .grid-top-right {
   grid-column-start: 2;
-  grid-column: span 2;
 }
 
 .nav {
@@ -74,12 +73,12 @@ html, body { height: 100%;   width: 100%; min-width: max-content; margin: 0; pad
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10;
+  z-index: 999;
 }
 
 .nav-section {
   display: grid;
-  grid-template-columns: repeat(4, 100px);
+  grid-template-columns: repeat(5, 100px);
   list-style: none;
   color: white;
   font-weight: 500;
@@ -341,8 +340,14 @@ html, body { height: 100%;   width: 100%; min-width: max-content; margin: 0; pad
   .grid-center {
     grid-column: span 2;
   }
+  .home-grid-layout {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
   .project-card {
     padding-inline: 0px;
+  }
+  .grid-top-right {
+    grid-column: span 2;
   }
   .card-section{
     grid-template-columns: 1fr;
@@ -371,5 +376,12 @@ html, body { height: 100%;   width: 100%; min-width: max-content; margin: 0; pad
   .desc-skill-grid {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  html, body {
+    min-width: max-content;
+    zoom: -100%;
   }
 }

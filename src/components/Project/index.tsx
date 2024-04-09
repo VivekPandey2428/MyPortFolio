@@ -30,20 +30,27 @@ const ProjectCard = ({
   description,
   key,
   idx,
+  handleClick,
   handleMouseEnter,
   ...restProps
 }: any) => {
   const handleMouseMove = (event: any) => {
-    console.log(idx);
     if (handleMouseEnter) {
       handleMouseEnter(event, idx);
     }
   };
+  const clickCapture = (evt: any, name: string) => {
+    console.log(name, evt.target)
+    if (handleClick) {
+      handleClick(name);
+    }
+  }
   return (
     <div
       key={key}
       className="project-card flex items-center justify-between"
       onMouseMove={handleMouseMove}
+      onClick={(evt) => clickCapture(evt, name)}
       {...restProps}
     >
       <h4 className="text-xl md:text-4xl hover:-translate-x-8">{name}</h4>
@@ -59,9 +66,12 @@ export default function Project() {
     setCurrentItem({ idx: idx, value: event.target.textContent });
     setOpen(true);
   };
+  const handleClick = (name: string) => {
+    alert(`${name} Coming Soon`);
+  }
   return (
     <>
-      <div className="pt-32 pb-20 px-14 font-grotesk flex items-center justify-center w-full">
+      <div id="my-projects" className="pt-32 pb-20 px-14 font-grotesk flex items-center justify-center w-full">
         <motion.div
           onMouseLeave={() => setOpen(false)}
           className="project-section w-full flex flex-col items-center justify-center"
@@ -70,6 +80,7 @@ export default function Project() {
             <ProjectCard
               key={idx}
               idx={idx}
+              handleClick={handleClick}
               handleMouseEnter={handleMouseEnter}
               name={project.name}
               description={project.description}

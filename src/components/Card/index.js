@@ -40,6 +40,7 @@ const Card = () => {
       <div
         className="card-section py-10"
         ref={scrollRef}
+        id="my-experience"
       >
         {WorkExperience.map((data, idx) => {
           return (
@@ -89,8 +90,8 @@ const Card = () => {
               "ease absolute bottom-0 right-0 h-0 w-0 border-b-2 transition-all duration-200 group-hover:w-full"
             )}
           ></span>
-          <span className="ease relative text-white transition-colors delay-200 duration-300 group-hover:text-black z-20">
-            Download Resume
+          <span onClick={() => window.open("https://drive.google.com/file/d/1u9gbg_wmn8YGaYfFKD-4qD3lovp03Si9/view?usp=sharing")} className="ease relative text-white transition-colors delay-200 duration-300 group-hover:text-black z-20">
+            View Resume
           </span>
         </div></div>
     </AnimatePresence>

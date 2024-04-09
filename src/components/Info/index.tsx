@@ -6,6 +6,7 @@ const Info = () => {
   return (
     <AnimatePresence>
       <motion.div
+        id="about-me"
         initial={{ x: "-100px", opacity: 0, scale: 0.5 }}
         whileInView={{
           x: 0,
@@ -18,7 +19,7 @@ const Info = () => {
           },
         }}
         viewport={{ once: true, amount: 0.8 }}
-        className="designation text-white font-grotesk text-lg px-14 md:text-5xl h-auto"
+        className="designation text-white font-grotesk text-3xl px-14  h-auto"
       >
         I craft modern websites utilizing cutting-edge technologies such as
         JavaScript, React, Angular, and TypeScript. I seamlessly blend these

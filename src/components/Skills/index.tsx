@@ -18,7 +18,7 @@ const skillsDetails = [
 
 const Skills = () => {
   return (
-    <div className="pt-10">
+    <div className="pt-10" id="my-skills">
       <div className="skill-grid">
         <div className="desc-skill-grid px-10 h-100 lg:h-3/4 md:flex-col">
           <AnimatePresence >

@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 
 const TextInput = ({textAreaRef, setTextValue, textValue}: any) => {
@@ -29,9 +30,9 @@ const TextInput = ({textAreaRef, setTextValue, textValue}: any) => {
                     },
                     rotate: rotateAnimate
                 }}
-                transition={{duration: 0.5, ease: "easeIn"}}
+                transition={{duration: 0.15, ease: "easeIn"}}
                 key={idx}
-                className={letter !== "\n" ? "inline-block" : "inline"}
+                className={classNames("text-slate-300",letter !== "\n" ? "inline-block" : "inline")}
               >
                 {letter}
               </motion.span>
